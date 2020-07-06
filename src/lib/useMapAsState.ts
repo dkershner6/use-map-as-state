@@ -55,9 +55,9 @@ export const useMapAsState = <K, V>(initialMap?: Map<K, V>): Map<K, V> => {
 
         entries: (): IterableIterator<[K, V]> => theMap.entries(),
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         forEach: (
             callbackfn: (value: V, key: K, map: Map<K, V>) => void,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             thisArg?: any
         ) => theMap.forEach(callbackfn, thisArg),
 
