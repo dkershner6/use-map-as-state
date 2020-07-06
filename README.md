@@ -4,7 +4,10 @@ A React Hook to use JavaScript's Map as React State, using an identical interfac
 
 ## Installation
 
-`npm i use-map-as-state`
+```
+npm i use-map-as-state
+npm i immer
+```
 
 ## Usage
 
