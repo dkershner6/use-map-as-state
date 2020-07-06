@@ -1,1 +1,3 @@
-export { default as twoPlusTwo } from './lib';
+import useMapAsState from './lib/useMapAsState';
+
+export default useMapAsState;
