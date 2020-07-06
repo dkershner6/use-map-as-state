@@ -120,6 +120,7 @@ describe('useMapAsState', () => {
     });
 
     it('Should delete a row when Edit is clicked in a TableRow and then delete button is clicked', async () => {
+        jest.useFakeTimers();
         const { queryAllByTestId, getByTestId, queryByTestId } = render(
             <UseMapAsStateComponent />
         );
@@ -140,6 +141,11 @@ describe('useMapAsState', () => {
                 'Deleting...'
             );
         });
+        jest.advanceTimersByTime(2500);
+        await waitFor(() => {
+            expect(queryByTestId(`TableRow-${tableRowId}`)).toBeNull();
+        });
+        jest.useRealTimers();
     });
 
     it('Should populate toString()', () => {
