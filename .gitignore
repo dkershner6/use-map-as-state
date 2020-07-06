@@ -1,3 +1,6 @@
+.npmrc
+.env*
+
 # Logs
 logs
 *.log
