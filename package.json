@@ -16,7 +16,14 @@
     "type": "git",
     "url": "git+https://github.com/dkershner6/use-map-as-state.git"
   },
-  "keywords": [],
+  "keywords": [
+    "immer",
+    "react",
+    "react-hooks",
+    "hooks",
+    "useMapAsState",
+    "Map"
+  ],
   "author": "Derek Kershner",
   "license": "MIT",
   "bugs": {
