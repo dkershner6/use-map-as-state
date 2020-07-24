@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dkershner6/useMapAsState.git"
+    "url": "git+https://github.com/dkershner6/use-map-as-state.git"
   },
   "keywords": [],
   "author": "Derek Kershner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dkershner6/useMapAsState/issues"
+    "url": "https://github.com/dkershner6/use-map-as-state/issues"
   },
-  "homepage": "https://github.com/dkershner6/useMapAsState#readme",
+  "homepage": "https://github.com/dkershner6/use-map-as-state#readme",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^10.4.7",
