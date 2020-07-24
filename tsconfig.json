@@ -20,7 +20,8 @@
   "exclude": [
     "node_modules",
     "dist",
-    "__test__",
+    "**/__test__/**/*.ts",
+    "**/__test__/**/*.tsx",
     "__mocks__",
     "**/*.test.ts",
     "**/*.test.tsx",
