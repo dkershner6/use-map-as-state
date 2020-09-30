@@ -1,14 +1,11 @@
 {
   "name": "use-map-as-state",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "React hook to use Map as React State, with the same interface as a normal Map.",
   "main": "dist/index.js",
-  "source": "src/index.ts",
-  "module": "dist/index.mjs",
-  "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rimraf dist && microbundle --external react --globals react=React --strict --no-compress",
+    "build": "rimraf dist && tsc",
     "format-check": "prettier --check .",
     "format": "prettier --write .",
     "test": "jest --coverage --passWithNoTests",
