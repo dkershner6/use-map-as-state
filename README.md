@@ -15,7 +15,7 @@ npm i use-map-as-state immer
 ## Usage
 
 ```typescript
-import useMapAsState from 'use-map-as-state';
+import { useMapAsState } from 'use-map-as-state';
 
 const FunctionComponent = () => {
     const theMap = useMapAsState(new Map());
