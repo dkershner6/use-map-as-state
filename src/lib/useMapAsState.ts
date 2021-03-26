@@ -8,9 +8,12 @@ enableMapSet();
  * It performs significantly better than arrays of objects for frequent manipulation and also holds ordering consistently.
  * This uses Immer under the hood, so be sure to pass new objects, arrays, and functions as values for proper re-rendering.
  * You will receive an error if you try to edit a value that won't create a re-render.
- * @param initialMap The initial @see Map to set.
+ *
+ * @param initialMap The initial @see Map to set. Can use a function as an initializer as well.
  */
-export const useMapAsState = <K, V>(initialMap?: Map<K, V>): Map<K, V> => {
+export const useMapAsState = <K, V>(
+    initialMap?: Map<K, V> | (() => Map<K, V>)
+): Map<K, V> => {
     const [theMap, updateTheMap] = useImmerProduce(initialMap);
 
     const mapAsState: Map<K, V> = {

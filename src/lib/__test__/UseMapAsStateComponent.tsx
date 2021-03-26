@@ -24,7 +24,7 @@ interface IUseMapAsStateComponent {
 const UseMapAsStateComponent = ({
     onStringChange
 }: IUseMapAsStateComponent): ReactElement => {
-    const mapAsState = useMapAsState(getABunchOfRows(50));
+    const mapAsState = useMapAsState(() => getABunchOfRows(50));
     const [selectAll, setSelectAll] = useState(false);
 
     const toggleSelectAll = () => {
