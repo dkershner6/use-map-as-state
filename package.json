@@ -1,6 +1,6 @@
 {
   "name": "use-map-as-state",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "React hook to use Map as React State, with the same interface as a normal Map.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
