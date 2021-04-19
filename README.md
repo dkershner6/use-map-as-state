@@ -14,22 +14,33 @@ npm i use-map-as-state immer
 
 ## Usage
 
+You interact with the Map exactly as you would a normal map, but all of the render safety and immutability is handled for you.
+
 ```typescript
 import { useMapAsState } from 'use-map-as-state';
 
 const FunctionComponent = () => {
-    const theMap = useMapAsState(new Map());
+    const theMap = useMapAsState(new Map([['header', 'Not clicked.']]));
+    
+    const handleHeaderClick = () => {
+        theMap.set('header', 'You clicked me.');
+    };
 
-    return <p>{theMap.get('header')}</p>;
+    return <h1 onClick={handleHeaderClick}>{theMap.get('header')}</h1>;
 };
 ```
+
+## Draft Usage
 
 Note: The `set` function returns the NEXT state, even if the render has not occurred yet.
 
 ```typescript
 const onClick = () => {
+    console.log(theMap.get('header')); // Whatever the previous value was
+
     const draft = theMap.set('header', 'TestHeader);
 
+    console.log(theMap.get('header')); // STILL whatever the previous value was
     console.log(draft.get('header')); // TestHeader
 }
 ```
