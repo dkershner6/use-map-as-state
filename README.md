@@ -21,7 +21,7 @@ import { useMapAsState } from 'use-map-as-state';
 
 const FunctionComponent = () => {
     const theMap = useMapAsState(new Map([['header', 'Not clicked.']]));
-    
+
     const handleHeaderClick = () => {
         theMap.set('header', 'You clicked me.');
     };
