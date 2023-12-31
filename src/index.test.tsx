@@ -143,7 +143,7 @@ const UseMapAsStateComponent = ({
             ...tableRow,
             status: TableRowStatus.SAVING,
         });
-        await wait(2);
+        await wait(0.5);
         mapAsState.set(tableRow.id, {
             ...tableRow,
             status: TableRowStatus.READY,
@@ -155,7 +155,7 @@ const UseMapAsStateComponent = ({
             ...tableRow,
             status: TableRowStatus.DELETING,
         });
-        await wait(2);
+        await wait(0.5);
         mapAsState.delete(tableRow.id);
     };
 
@@ -393,7 +393,6 @@ describe("useMapAsState", () => {
     });
 
     it("Should delete a row when Edit is clicked in a TableRow and then delete button is clicked", async () => {
-        jest.useFakeTimers();
         render(<UseMapAsStateComponent />);
 
         const tableRowId = screen.queryAllByTestId(/TableRow-/)[0].id;
@@ -414,13 +413,17 @@ describe("useMapAsState", () => {
                 screen.queryByTestId(`TableRow-${tableRowId}`),
             ).toContainHTML("Deleting...");
         });
-        jest.advanceTimersByTime(2500);
-        await waitFor(() => {
-            expect(
-                screen.queryByTestId(`TableRow-${tableRowId}`),
-            ).not.toBeInTheDocument();
-        });
-        jest.useRealTimers();
+
+        await waitFor(
+            () => {
+                expect(
+                    screen.queryByTestId(`TableRow-${tableRowId}`),
+                ).not.toBeInTheDocument();
+            },
+            {
+                timeout: 5000,
+            },
+        );
     });
 
     it("Should populate toString()", () => {
