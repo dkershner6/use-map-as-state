@@ -1,9 +1,10 @@
 /* eslint-disable sonarjs/no-duplicate-string */
+import React, { ReactElement, useState } from "react";
 
 import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
-import React, { ReactElement, useState } from "react";
+
 import { useMapAsState } from ".";
 
 enum TableRowStatus {
